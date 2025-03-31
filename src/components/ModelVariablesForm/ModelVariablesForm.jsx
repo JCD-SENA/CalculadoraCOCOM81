@@ -22,8 +22,19 @@ export const ModelVariablesForm = () => {
 				[a, b, c, d] = [3.6, 1.2, 2.5, 0.32]
 				break
 		}
-
-		//console.log(parseInt(idealTime))
+		const m = RELY * DATA * CPLX * TIME * STOR * VIRT * TURN * ACAP * AEXP * PCAP * VEXP * LEXP * MODP * TOOL * SCED
+		const E = a * (kloc ** b) * m
+		let Tdev = 0
+		let P = 0
+		if (!IsNaN(parseInt(idealTime))) { // Se asume que si el tiempo ideal no está especificado, entonces la cantidad del personal lo está   
+			Tdev = idealTime
+			P = E/Tdev
+		} else {
+			P = personel
+			Tdev = c * (E ** d)
+		}
+		//Para incrementar un 5% el sueldo cada año
+		const years = Math.ceil(Tdev / 12)
 	}
 
 	return (
@@ -105,6 +116,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar la complejidad del producto"
 				}}
 				form={{register: register, errors: errors}}
+				values={[0.7, 0.85, 1, 1.15, 1.3, 1.65]}
 			/>
 			<b>Atributos de la computadora</b>
 			<SelectForm
@@ -116,6 +128,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[1, 1.11, 1.3, 1.66]}
 			/>
 			<SelectForm
 				name="STOR"
@@ -126,6 +139,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[1, 1.06, 1.21, 1.56]}
 			/>
 			<SelectForm
 				name="VIRT"
@@ -136,6 +150,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[0.87, 1, 1.15, 1.3]}
 			/>
 			<SelectForm
 				name="TURN"
@@ -146,6 +161,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[0.87, 1, 1.07, 1.15]}
 			/>
 			<b>Atributos del personal</b>
 			<SelectForm
@@ -157,6 +173,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[1.46, 1.19, 1, 0.86, 0.71]}
 			/>
 			<SelectForm
 				name="AEXP"
@@ -167,6 +184,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[1.29, 1.13, 1, 0.91, 0.82]}
 			/>
 			<SelectForm
 				name="PCAP"
@@ -177,6 +195,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[1.42, 1.17, 1, 0.86, 0.7]}
 			/>
 			<SelectForm
 				name="VEXP"
@@ -187,6 +206,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[1.21, 1.1, 1, 0.9]}
 			/>
 			<SelectForm
 				name="LEXP"
@@ -197,6 +217,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[1.14, 1.07, 1, 0.95]}
 			/>
 			<b>Atributos del proyecto</b>
 			<SelectForm
@@ -208,6 +229,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[1.24, 1.1, 0, 0.91, 0.82]}
 			/>
 			<SelectForm
 				name="TOOL"
@@ -218,6 +240,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[1.24, 1.1, 1, 0.91, 0.83]}
 			/>
 			<SelectForm
 				name="SCED"
@@ -228,6 +251,7 @@ export const ModelVariablesForm = () => {
 					required: "Se debe especificar"
 				}}
 				form={{register: register, errors: errors}}
+				values={[1.23, 1.08, 1, 1.04, 1.1]}
 			/>
 			<input type="submit" value="calcular"/>
 		</form>
