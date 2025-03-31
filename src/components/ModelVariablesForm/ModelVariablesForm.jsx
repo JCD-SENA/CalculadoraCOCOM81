@@ -26,15 +26,19 @@ export const ModelVariablesForm = () => {
 		const E = a * (kloc ** b) * m
 		let Tdev = 0
 		let P = 0
-		if (!IsNaN(parseInt(idealTime))) { // Se asume que si el tiempo ideal no está especificado, entonces la cantidad del personal lo está   
+		if (!isNaN(parseInt(idealTime))) { // Se asume que si el tiempo ideal no está especificado, entonces la cantidad del personal lo está   
 			Tdev = idealTime
-			P = E/Tdev
+			P = parseInt(E/Tdev)
 		} else {
 			P = personel
 			Tdev = c * (E ** d)
 		}
 		//Para incrementar un 5% el sueldo cada año
-		const years = Math.ceil(Tdev / 12)
+		let totalCost = 0
+		for (let month=1;month<=Tdev;month++) {
+			totalCost += (wage + ((wage/100) * (5 * (Math.ceil(month/12)-1)))) * P
+		}
+		alert(`Se estima que el proyecto va a tomar ${Math.ceil(Tdev)} meses y va a costar $${totalCost} con un estudio de ${P} desarrolladores.`)
 	}
 
 	return (
