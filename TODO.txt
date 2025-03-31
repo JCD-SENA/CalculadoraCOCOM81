@@ -1,0 +1,33 @@
+1. Datos que solicita
+1.1. Estimación del proyecto en kilo-lineas de código
+1.2. Una lista con los 15 parametros de coste según donde caen en la tabla
+1.2.1. RELY
+1.2.2. DATA
+1.2.3. CPLX
+1.2.4. TIME
+1.2.5. STOR
+1.2.6. VIRT
+1.2.7. TURN
+1.2.8. ACAP
+1.2.9. AEXP
+1.2.10. PCAP
+1.2.11. VEXP
+1.2.12. LEXP
+1.2.13. MODP
+1.2.14. TOOL
+1.2.15. SCED
+1.2.16. Todos los anteriores deben ser Muy bajo, Bajo, Nominal, Alto, Muy alto o Extremadamente alto
+1.3.1. El número de personas para realizar el calculo
+1.3.2 O los meses esperados para luego calcular el tamaño del equipo
+1.4 El sueldo mensual
+1.5 El modo, debe ser organico, semilibre, rigido
+
+2. Se le explican al usuario los valores
+3. Se realizan los calculos
+3.1. Si la estimación de tiempo supera un año, se le incrementa un 5% el sueldo cada año
+
+4. Debe ser una aplicación responsiva y amigable
+5. Tiene que ser web
+6. Se realizan validaciones
+
+7. Se debe realizar un informe con los integrantes, variables usadas, ejemplo del programa en uso y una lista de las tecnologias usadas
