@@ -1,10 +1,1 @@
-* {
-	padding: 0;
-	margin: 0;
-}
-
-.variablesForm {
-	display: flex;
-	flex-direction: column;
-	width: 30%;
-}
+@import "tailwindcss";
