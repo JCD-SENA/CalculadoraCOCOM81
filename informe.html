@@ -55,8 +55,8 @@
 	<ul>
 		<li><b>KLOC</b> las kilolineas estimadas del proyecto</li>
 		<li><b>wage</b> el sueldo de los programadores</li>
-		<li><b>personel</b> los miembros del proyecto</li>
-		<li><b>idealTime</b> los meses que idealmente va a tomar le desarrollo</li>
+		<li><b>P</b> los miembros del proyecto</li>
+		<li><b>Tdev</b> los meses que idealmente va a tomar el desarrollo en meses</li>
 		<li><b>mode</b> el modo de desarrollo, dependiendo del modo se cambia el valor de los ajustes A, B, C y D</li>
 	</ul>
 	<h3>Atributos del producto</h3>
@@ -86,24 +86,57 @@
 		<li><b>TOOL</b> Uso de herramientas software</li>
 		<li><b>SCED</b> Restricciones en la duración del proyecto</li>
 	</ul>
+	<h3>Variables calculadas</h3>
+	<ul>
+		<li><b>E</b> La quantificación del esfuerzo puesto en el proyecto</li>
+		<li><b>m(X)</b> La quantificación de todos los factores que puedan afectar al proyecto</li>
+		<li><b>totalCost</b> El costo total del proyecto</li>
+	</ul>
 	<h2>Ejemplo de calculo e interpretación</h2>
 	<p>Se desea calcular un proyecto simple para una pizzería la cual registra compras en una base de datos y se puede acceder a esta mediante una API.</p>
 	<div>
-		<span><b>KLOC = 5.5</b> Se estimó con otro modelo que el proyecto va a tomar 5500 lineas de codigo</span>
-		<span><b>wage = $1.423.500</b> Se les va a pagar el mínimo a los empleados</span>
+		<span><b>KLOC = 5</b> Se estimó con otro modelo que el proyecto va a tomar 5500 lineas de codigo</span>
+		<span><b>wage = $2.000.000</b> Se les va a pagar dos millones a cada desarrollador por mes</span>
 		<span><b>personel = ?</b> No se especifica la cantidad de empleados en este caso, por lo que es una incognita a resolver</span>
-		<span><b>idealTime = 6</b> Se espera que el proyecto esté terminado a mediados de año</span>
+		<span><b>idealTime = 6</b> Se espera que el proyecto esté terminado en 6 meses</span>
 		<span><b>mode = Semilibre</b> Se define que el modo de desarrollo va a ser Semilibre, por lo que</span>
 		<span><b>A = 3</b> El ajuste A pasa a ser 3</span>
 		<span><b>B = 1,12</b> El ajuste B pasa a ser 1,12</span>
 		<span><b>C = 2,5</b> El ajuste C pasa a ser 2,5</span>
 		<span><b>D = 0,35</b> El ajuste D pasa a ser 0,35</span>
-		<span><b>RELY = alta = 1,15</b> Se define que el proyecto sea altamente fiable, por lo que es un valor de ajuste de 1,15</span>
+		<span><b>RELY = alto = 1,15</b> Se define que el proyecto sea altamente fiable, por lo que es un valor de ajuste de 1,15</span>
 		<span><b>DATA = nominal = 1</b> Se define que el tamaño de la base de datos es nominal, por lo que el valor de ajuste pasa a ser 1</span>
 		<span><b>CPLX = bajo = 0,85</b> Se define que la complejidad del producto es baja, por lo que el valor de ajuste es 0,85</span>
-		<span><b>TIME = nominal = 1</b> Se</span>
-		<span><b></b></span>
+		<span><b>TIME = nominal = 1</b> Se define que no hay restricciones respecto al tiempo de ejecución, por lo que el valor de ajuste es 1</span>
+		<span><b>STOR = alto = 1,06</b> Se define que hay unas restricciónes de almacenamiento altas dado a los servicios elegidos, por lo que se le da un valor de ajuste de 1,06</span>
+		<span><b>VIRT = bajo = 0,87</b> Se define que hay baja instabilidad en la maquina virtual, dado a la simpleza del sistema, por lo que se le da un valor de ajuste de 0,87</span>
+		<span><b>TURN = muy alto = 1,15</b> Se define que el tiempo de respuesta debe ser muy alto, por lo que el valor ajustado pasa a ser 1,15</span>
+		<span><b>ACAP = nominal = 1</b> Se define que la capacidad del analista es normal, por lo que el valor de ajuste es 1</span>
+		<span><b>AEXP = alto = 0,91</b> Se define que la experiencia de los desarrolladores debe ser alta, por lo que el valor de ajuste es 0,91</span>
+		<span><b>PCAP = alto = 0,87</b> Se define que los desarrolladores deben tener altas capacidades, por lo que el valor de ajuste es 0,87</span>
+		<span><b>VEXP = alto = 0,9</b> Se define que los desarrolladores deben estar altamente familiarizados con el sistema operativo, por lo que el valor de ajuste es 0,9</span>
+		<span><b>LEXP = alto = 0,95</b> Se define que los desarrolladores deben estar altamente familiarizados con el lenguaje de programación, por lo que el valor de ajuste es 0,95</span>
+		<span><b>MODP = nominal = 1</b> Se define que el software utilice practicas medianamente modernas, por lo que el valor de ajuste es 1</span>
+		<span><b>TOOL = muy alto = 0,83</b> Se define que los desarrolladores deben estar muy familiarizados con las herramientas de desarrollo, por lo que el valor de ajuste es 0,83</span>
+		<span><b>SCED = alto = 1,04</b>Se define que hay restricciones altas sobre el tiempo de desarrollo el proyecto, por lo que el valor de ajuste es 1,04</span>
 	</div>
+	<p>Ahora con los 15 valores de ajuste definidos, se calcula el factor final multiplicando a todos los anteriores para obtener un ajuste según las condicines del proyecto</p>
+	<span><b>m(X) = RELY * DATA * CPLX * TIME * STOR * VIRT * TURN * ACAP * AEXP * PCAP * VEXP * LEXP * MODP * TOOL * SCED</b></span>
+	<p>Que en el caso del ejemplo equivale a</p>
+	<span><b>m(X) = 1,15 * 1 * 0,85 * 1 * 1,06 * 0,87 * 1,15 * 1 * 0,91 * 0,87 * 0,9 * 0,95 * 1 * 0,83 * 0,87 * 0,9 * 1 * 0,83 * 1,04</b></span>
+	<span><b>m(X) = ~0,4</b></span>
+	<p>Posteriormente se calcula el esfuerzo total del proyecto con los ajustes <b>A</b> y <b>B</b> multiplicando la cantidad de kilolineas y luego se le aplica el ajuste final que toma en cuenta todas las condiciones del proyect</p>
+	<span><b>E = A * (KLOC)<sup>B</sup> * m(X)</b></span>
+	<span><b>E = ~7,28</b></span>
+	<p>No se calcula el tiempo ideal de desarrollo (<b>Tdev</b>) en este caso ya que fue especificado previamente, pero de hacerlo si no fuese el caso entonces se calcularía con la formula</p>
+	<span><b>Tdev = c * (E)<sup>D</sup></b></span>
+	<p>Ya que en este caso se desconoce cual es la cantidad de desarrolladores necesaria, entonces se divide el esfuerzo por el tiempo ideal de desarrollo en meses</p>
+	<span><b>P = E/Tdev</b></span>
+	<span><b>P = 1.21</b> que redondeado daría 2 personas</span>
+	<p>Finalmente se calcula el costo total del desarrollo multiplicando el salario mensual de cada empleado por los meses de desarrollo</p>
+	<span><b>totalCost = (P * wage) * Tdev</b></span>
+	<span><b>totalCost = (2 * 2.000.000) * 6 = $24.000.000</b></span>
+	<p>Siguiendo el modelo COCOMO81, el proyecto va a necesitar dos personas para desarollarlo en 6 meses y va a costar $24.000.000</p>
 	<h2>Tecnologías utilizadas</h2>
 	<ul>
 		<li><b>React</b> un framework de Javascript el cual permite crear componentes reutilizables</li>

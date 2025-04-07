@@ -188,19 +188,17 @@ export const ModelVariablesForm = () => {
 					className="mb-4"
 				/>
 				
-				<div className="col-span-1 md:col-span-2">
-					<SelectForm
-						name="mode"
-						placeholder="Seleccione un modo"
-						label="Modo de desarrollo"
-						options={modes}
-						register={{
-							required: "Se debe especificar modo de desarrollo"
-						}}
-						form={{ register: register, errors: errors }}
-						className="mb-6"
-					/>
-				</div>
+				<SelectForm
+					name="mode"
+					placeholder="Seleccione un modo"
+					label="Modo de desarrollo"
+					options={modes}
+					register={{
+						required: "Se debe especificar modo de desarrollo"
+					}}
+					form={{ register: register, errors: errors }}
+					className="mb-6"
+				/>
 				
 				<div className="col-span-1 md:col-span-2">
 					<h2 className="text-xl font-semibold text-blue-800 dark:text-blue-800 mb-4">Atributos del producto</h2>
@@ -400,20 +398,18 @@ export const ModelVariablesForm = () => {
 					values={[1.24, 1.1, 1, 0.91, 0.83]}
 				/>
 				
-				<div className="col-span-1 md:col-span-2">
-					<SelectForm
-						name="SCED"
-						label="Restricciones en la duración del proyecto"
-						placeholder="Seleccione la valoración"
-						options={values.slice(0, 5)}
-						register={{
-							required: "Se debe especificar"
-						}}
-						form={{ register: register, errors: errors }}
-						className="mb-6"
-						values={[1.23, 1.08, 1, 1.04, 1.1]}
-					/>
-				</div>
+				<SelectForm
+					name="SCED"
+					label="Restricciones en la duración del proyecto"
+					placeholder="Seleccione la valoración"
+					options={values.slice(0, 5)}
+					register={{
+						required: "Se debe especificar"
+					}}
+					form={{ register: register, errors: errors }}
+					className="mb-6"
+					values={[1.23, 1.08, 1, 1.04, 1.1]}
+				/>
 				
 				{/* Mensaje de error si existe */}
 				{calculationError && (
