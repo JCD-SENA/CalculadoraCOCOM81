@@ -231,21 +231,19 @@ export const ModelVariablesForm = () => {
 					className="mb-4"
 					values={[0.94, 1, 1.08, 1.16]}
 				/>
-				
-				<div className="col-span-1 md:col-span-2">
-					<SelectForm
-						name="CPLX"
-						label="Complejidad del producto"
-						placeholder="Seleccione la valoración"
-						options={values}
-						register={{
-							required: "Se debe especificar la complejidad del producto"
-						}}
-						form={{ register: register, errors: errors }}
-						className="mb-6"
-						values={[0.7, 0.85, 1, 1.15, 1.3, 1.65]}
-					/>
-				</div>
+			
+				<SelectForm
+					name="CPLX"
+					label="Complejidad del producto"
+					placeholder="Seleccione la valoración"
+					options={values}
+					register={{
+						required: "Se debe especificar la complejidad del producto"
+					}}
+					form={{ register: register, errors: errors }}
+					className="mb-6"
+					values={[0.7, 0.85, 1, 1.15, 1.3, 1.65]}
+				/>
 				
 				<div className="col-span-1 md:col-span-2">
 					<h2 className="text-xl font-semibold text-blue-800 dark:text-blue-800 mb-4">Atributos de la computadora</h2>

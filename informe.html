@@ -4,8 +4,111 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Informe</title>
+	<style>
+		* {
+			font-family: Arial, Helvetica, sans-serif;
+			margin: 0;
+		}
+
+		h1 {
+			margin-top: 10vh;
+			margin-bottom: 1vh;
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			background-color: #fffbeb;
+		}
+
+		p, h2, h3, ul, span {
+			margin-bottom: 2vh;
+		}
+
+		ul, p {
+			width: 40%;
+		}
+
+		h2 {
+			color: #193cb8;
+		}
+
+		div {
+			width: 35%;
+			display: flex;
+			flex-direction: column;
+		}
+		
+		div > span > b {
+			margin-right: 10px;
+		}
+	</style>
 </head>
 <body>
 	<h1>Informe de la calculadora COCOMO81</h1>
+	<span>Realizado por Juan Camilo Dousdebes Morales y Julian David Mancipe Ruiz</span>
+	<span>ADSO Abril del 2025</span>
+	<h2>Variables implementadas</h2>
+	<h3>Información General</h3>
+	<ul>
+		<li><b>KLOC</b> las kilolineas estimadas del proyecto</li>
+		<li><b>wage</b> el sueldo de los programadores</li>
+		<li><b>personel</b> los miembros del proyecto</li>
+		<li><b>idealTime</b> los meses que idealmente va a tomar le desarrollo</li>
+		<li><b>mode</b> el modo de desarrollo, dependiendo del modo se cambia el valor de los ajustes A, B, C y D</li>
+	</ul>
+	<h3>Atributos del producto</h3>
+	<ul>
+		<li><b>RELY</b> Fiabilidad requerida del software</li>
+		<li><b>DATA</b> Tamaño de la base de datos</li>
+		<li><b>CPLX</b> Complejidad del producto</li>
+	</ul>
+	<h3>Atributos de la computadora</h3>
+	<ul>
+		<li><b>TIME</b> Restricciones del tiempo de ejecución</li>
+		<li><b>STOR</b> Restricciones del almacenamiento principal</li>
+		<li><b>VIRT</b> Inestabilidad de la máquina virtual</li>
+		<li><b>TURN</b> Tiempo de respuesta del computador</li>
+	</ul>
+	<h3>Atributos del personal</h3>
+	<ul>
+		<li><b>ACAP</b> Capacidad del analista</li>
+		<li><b>AEXP</b> Experiencia en la aplicación</li>
+		<li><b>PCAP</b> Capacidad de los programadores</li>
+		<li><b>VEXP</b> Experiencia en el sistema operativo utilizado</li>
+		<li><b>LEXP</b> Experiencia en el lenguaje de programación</li>
+	</ul>
+	<h3>Atributos del proyecto</h3>
+	<ul>
+		<li><b>MODP</b> Uso de prácticas de programación modernas</li>
+		<li><b>TOOL</b> Uso de herramientas software</li>
+		<li><b>SCED</b> Restricciones en la duración del proyecto</li>
+	</ul>
+	<h2>Ejemplo de calculo e interpretación</h2>
+	<p>Se desea calcular un proyecto simple para una pizzería la cual registra compras en una base de datos y se puede acceder a esta mediante una API.</p>
+	<div>
+		<span><b>KLOC = 5.5</b> Se estimó con otro modelo que el proyecto va a tomar 5500 lineas de codigo</span>
+		<span><b>wage = $1.423.500</b> Se les va a pagar el mínimo a los empleados</span>
+		<span><b>personel = ?</b> No se especifica la cantidad de empleados en este caso, por lo que es una incognita a resolver</span>
+		<span><b>idealTime = 6</b> Se espera que el proyecto esté terminado a mediados de año</span>
+		<span><b>mode = Semilibre</b> Se define que el modo de desarrollo va a ser Semilibre, por lo que</span>
+		<span><b>A = 3</b> El ajuste A pasa a ser 3</span>
+		<span><b>B = 1,12</b> El ajuste B pasa a ser 1,12</span>
+		<span><b>C = 2,5</b> El ajuste C pasa a ser 2,5</span>
+		<span><b>D = 0,35</b> El ajuste D pasa a ser 0,35</span>
+		<span><b>RELY = alta = 1,15</b> Se define que el proyecto sea altamente fiable, por lo que es un valor de ajuste de 1,15</span>
+		<span><b>DATA = nominal = 1</b> Se define que el tamaño de la base de datos es nominal, por lo que el valor de ajuste pasa a ser 1</span>
+		<span><b>CPLX = bajo = 0,85</b> Se define que la complejidad del producto es baja, por lo que el valor de ajuste es 0,85</span>
+		<span><b>TIME = nominal = 1</b> Se</span>
+		<span><b></b></span>
+	</div>
+	<h2>Tecnologías utilizadas</h2>
+	<ul>
+		<li><b>React</b> un framework de Javascript el cual permite crear componentes reutilizables</li>
+		<li><b>React Hook Forms</b> una librería de React para manejar formularios de forma eficiente</li>
+		<li><b>Tailwind</b> un framework de CSS que permite crear estilos modernos más rapido</li>
+	</ul>
 </body>
 </html>
